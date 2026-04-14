@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Marieke Verhaak — hypnotherapeut en auteur. Ontspannen jezelf zijn. Bewust in het leven staan, doen wat je diep van binnen écht belangrijk vindt. Persoonlijke sessies, groepsmeditatie, soundhealing en het boek Gelukkig opgroeien." />
+  <meta name="keywords" content="Marieke Verhaak, hypnotherapeut, bewust in het leven staan, meditatie en soundhealing, gelukkig opgroeien, ontspannen jezelf zijn, oprecht authentiek autonoom, doen wat je écht belangrijk vindt" />
+  <meta property="og:title" content="Marieke Verhaak — Hypnotherapeut & Auteur" />
+  <meta property="og:description" content="Ontspannen jezelf zijn. Bewust in het leven staan en doen wat je diep van binnen écht belangrijk vindt." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mariekeverhaak.com" />
+  <title>Marieke Verhaak — Hypnotherapeut & Auteur | Ontspannen jezelf zijn</title>
+  <link rel="canonical" href="https://mariekeverhaak.com" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATIE
+  ============================================================ -->
+  <nav id="site-nav" role="navigation" aria-label="Hoofdnavigatie">
+    <div class="nav__inner" id="nav-inner">
+      <a class="nav__logo" href="#hero" aria-label="Naar bovenkant">Marieke Verhaak</a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="#over">Over mij</a></li>
+        <li><a href="#boek">Boek</a></li>
+        <li><a href="#sessies-detail">Sessies</a></li>
+        <li><a href="#meditatie-detail">Meditatie</a></li>
+        <li><a href="#retreat-detail">Retreat</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav__cta">
+        <a href="#diensten" class="btn btn--accent btn--pill" id="nav-cta-btn">
+          Plan een sessie
+          <span class="btn__icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
+          </span>
+        </a>
+        <button class="nav__hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav__overlay" id="nav-overlay" aria-hidden="true">
+    <a href="#over" class="nav-link-overlay">Over mij</a>
+    <a href="#boek" class="nav-link-overlay">Boek</a>
+    <a href="#sessies-detail" class="nav-link-overlay">Sessies</a>
+    <a href="#meditatie-detail" class="nav-link-overlay">Meditatie</a>
+    <a href="#retreat-detail" class="nav-link-overlay">Retreat</a>
+    <a href="#contact" class="nav-link-overlay">Contact</a>
+    <a href="#sessies-detail" class="nav-link-overlay" style="font-size:1.2rem; margin-top:1rem; color:var(--color-accent-dark);">Plan een sessie →</a>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section id="hero" aria-labelledby="hero-heading" style="overflow: visible;">
+      <div class="container">
+        <div class="hero__grid">
+
+          <!-- Links: tekst -->
+          <div class="hero__content reveal">
+            <div class="hero__meta">
+              <span class="eyebrow">Hypnotherapeut &amp; auteur</span>
+            </div>
+
+            <h1 class="hero__title" id="hero-heading">
+              Kom weer in<br>
+              <em>balans</em>
+            </h1>
+
+            <p class="hero__sub">
+              Heb jij behoefte om te onthaasten? Ontdek de ruimte en veiligheid om diep te ontspannen en innerlijke rust te ervaren.
+            </p>
+
+            <div class="btn-group">
+              <a href="#diensten" class="btn btn--primary btn--pill" id="hero-cta-diensten">
+                Bekijk diensten
+                <span class="btn__icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
+                </span>
+              </a>
+              <a href="#boek" class="btn btn--outline btn--pill" id="hero-cta-boek">
+                Bestel het boek
+              </a>
+            </div>
+          </div>
+
+          <!-- Rechts: foto -->
+          <div class="hero__image-shell reveal" style="transition-delay: 120ms; position: relative;">
+            <div class="hero__image-inner">
+              <img
+                src="https://picsum.photos/seed/marieke-portrait/640/800"
+                alt="Portret van Marieke Verhaak, hypnotherapeut en auteur"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </div>
+            <div class="hero__badge" aria-hidden="true">
+              <span class="hero__badge-dot"></span>
+              <span>Sessies beschikbaar</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         OVER MARIEKE
+    ============================================================ -->
+    <section id="over" class="section" aria-labelledby="over-heading">
+      <div class="container">
+        <div class="over__grid">
+
+          <!-- Foto -->
+          <div class="over__image-shell reveal">
+            <div class="over__image-inner">
+              <img
+                src="marieke.jpg"
+                alt="Marieke Verhaak"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Tekst -->
+          <div class="over__content">
+            <span class="eyebrow reveal">Over mij</span>
+            <h2 class="reveal" id="over-heading">Wie is Marieke Verhaak?</h2>
+
+            <p class="over__intro reveal">
+              Heb jij behoefte om te onthaasten en tot rust te komen? Even te ontsnappen aan de hectiek van alledag? Laten we dan samen aan de slag gaan. 
+            </p>
+
+            <div class="over__body reveal">
+              <p>Ik bied je de ruimte en de veiligheid om diep te ontspannen en innerlijke rust te ervaren. Dit zorgt voor balans en hernieuwde energie. Ik leer je vervolgens deze ontspanning en rust te integreren in je dagelijkse leven.</p>
+              
+              <ul class="bullet-list" style="margin-top: 1.5rem;">
+                <li>Ontdek jouw behoefte aan tijd voor jezelf (me-time).</li>
+                <li>Maak tijd en ruimte voor wat jij waardeert, zoals de natuur.</li>
+                <li>Maak je dromen waar en doe waar je écht blij van wordt.</li>
+              </ul>
+            </div>
+
+            <div class="over__quote reveal">
+              <blockquote>
+                "Oprecht in het leven staan begint met weten wie je bent — en durf je daarnaar te leven."
+              </blockquote>
+              <p style="margin-top: 0.75rem; font-size: 0.8rem;">— Marieke Verhaak</p>
+            </div>
+
+            <p class="over__body reveal">
+              Als ouder weet ik uit eigen ervaring hoe krachtig het is wanneer je zelf blij en authentiek bent. Kinderen leren niets van perfecte ouders — ze bloeien op bij echte, gelukkige volwassenen die doen wat ze diep van binnen écht belangrijk vinden. Dat geloof ondersteunt mijn boek <em>Gelukkig opgroeien</em> en elke sessie die ik begeleid.
+            </p>
+
+            <div class="reveal" style="margin-top: 2rem;">
+              <a href="#diensten" class="btn btn--accent" id="over-cta">
+                Werk met mij
+                <span class="btn__icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         DIENSTEN
+    ============================================================ -->
+    <section id="diensten" class="section section--alt" aria-labelledby="diensten-heading">
+      <div class="container">
+
+        <div class="diensten__header">
+          <span class="eyebrow reveal">Diensten</span>
+          <h2 class="reveal" id="diensten-heading">Op welke manier wil jij samenwerken?</h2>
+          <p class="reveal" style="margin-top: 0.75rem;">
+            Of je nu wilt beginnen met mijn boek, een persoonlijke sessie zoekt, of liever in een groep start.
+          </p>
+          
+          <div class="cta-banner reveal" style="margin-top: 2rem; padding: 1.5rem; background: var(--color-accent-light); border-radius: var(--radius-card); border: 1px solid var(--color-accent);">
+            <p style="color: var(--color-accent-dark); max-width: none; font-weight: 500;">
+              Wil je samen bekijken hoe jij jouw gewenste situatie realiteit kunt laten worden? Je hoeft het niet alleen te doen.
+            </p>
+            <a href="#contact" class="btn btn--accent btn--pill" style="margin-top: 1rem;">
+              Plan een gratis 30 minuten call
+            </a>
+          </div>
+        </div>
+
+        <div class="bento stagger-parent">
+
+          <!-- Boek -->
+          <article class="dienst-card dienst-card--book reveal" aria-label="Boek Gelukkig opgroeien">
+            <div class="dienst-card__inner">
+              <div class="dienst-card__icon" aria-hidden="true">
+                <!-- Boek icoon -->
+                <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              </div>
+              <span class="dienst-card__tag">Boek</span>
+              <h3 class="dienst-card__title">Gelukkig opgroeien</h3>
+              <p class="dienst-card__desc">
+                Een boek voor ouders die hun kinderen willen laten floreren — door zelf te doen waar ze blij van worden.
+              </p>
+              <div class="dienst-card__footer">
+                <div>
+                  <span class="dienst-card__prijs">€&nbsp;23,50</span>
+                  <span class="dienst-card__sub">Inclusief verzending</span>
+                </div>
+                <a href="#boek" class="dienst-card__cta" aria-label="Meer over het boek Gelukkig opgroeien">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12L12 2M12 2H6M12 2v6"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Persoonlijke sessie -->
+          <article class="dienst-card dienst-card--sessie dienst-card--accent reveal" aria-label="Persoonlijke hypnotherapiesessie">
+            <div class="dienst-card__inner">
+              <div class="dienst-card__icon" aria-hidden="true">
+                <!-- Persoon icoon -->
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              </div>
+              <span class="dienst-card__tag">Individueel · Online</span>
+              <h3 class="dienst-card__title">Persoonlijke sessie</h3>
+              <p class="dienst-card__desc">
+                Een-op-een hypnotherapiesessie. We werken samen aan patronen die je tegenhouden — zodat je ontspannen en authentiek in het leven kunt staan.
+              </p>
+              <div class="dienst-card__footer">
+                <div>
+                  <span class="dienst-card__prijs">€&nbsp;90</span>
+                  <span class="dienst-card__sub">Per 50 minuten · online</span>
+                </div>
+                <a href="#sessies-detail" class="dienst-card__cta" aria-label="Boek een persoonlijke sessie">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12L12 2M12 2H6M12 2v6"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Groepsmeditatie -->
+          <article class="dienst-card dienst-card--medit reveal" aria-label="Groepsmeditatie met soundhealing">
+            <div class="dienst-card__inner">
+              <div class="dienst-card__icon" aria-hidden="true">
+                <!-- Muziek/geluid icoon -->
+                <svg viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><path d="M8 17V5l12-2v12"/></svg>
+              </div>
+              <span class="dienst-card__tag">Groep · Online</span>
+              <h3 class="dienst-card__title">Groepsmeditatie &amp; soundhealing</h3>
+              <p class="dienst-card__desc">
+                Samen mediteren met de helende kracht van soundhealing. Ontspan diep, kom bij jezelf en laad op in een zachte groepsbegeleiding.
+              </p>
+              <div class="dienst-card__footer">
+                <div>
+                  <span class="dienst-card__prijs">€&nbsp;22</span>
+                  <span class="dienst-card__sub">Per 1,5 uur · online</span>
+                </div>
+                <a href="#meditatie-detail" class="dienst-card__cta" aria-label="Boek een groepsmeditatie">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12L12 2M12 2H6M12 2v6"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- One Day Retreat -->
+          <article class="dienst-card dienst-card--retreat reveal" aria-label="One Day Retreat Ontspannen jezelf zijn">
+            <div class="dienst-card__inner">
+              <div class="dienst-card__icon" aria-hidden="true">
+                <!-- Zon/dag icoon -->
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+              </div>
+              <span class="dienst-card__tag">Dag retreat · Online</span>
+              <h3 class="dienst-card__title">One day retreat<br><em>'Ontspannen jezelf zijn'</em></h3>
+              <p class="dienst-card__desc">
+                Een volledige dag van diepe ontspanning, zelfinzicht en verbinding met wat jij écht belangrijk vindt.
+              </p>
+              <div class="dienst-card__footer">
+                <div>
+                  <span class="dienst-card__prijs">€&nbsp;144</span>
+                  <span class="dienst-card__sub">Volledige dag · online</span>
+                </div>
+                <a href="#retreat-detail" class="dienst-card__cta" aria-label="Boek de one day retreat">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12L12 2M12 2H6M12 2v6"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         BOEK
+    ============================================================ -->
+    <section id="boek" class="section" aria-labelledby="boek-heading">
+      <div class="container">
+        <div class="boek__grid">
+
+          <!-- Cover -->
+          <div class="boek__cover-shell reveal">
+            <div class="boek__cover-inner">
+              <img
+                src="https://picsum.photos/seed/gelukkig-opgroeien-boek/640/853"
+                alt="Boekcover van Gelukkig opgroeien door Marieke Verhaak"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Tekst -->
+          <div class="boek__content">
+            <span class="eyebrow reveal">Het boek</span>
+            <h2 class="reveal" id="boek-heading">Gelukkig opgroeien</h2>
+            <p class="boek__subtitle reveal">door Marieke Verhaak</p>
+
+            <div class="boek__body reveal">
+              <p>Als ouder wil je het liefst dat je kind lekker in zijn of haar vel zit en volop geniet van het leven terwijl het opgroeit. In mijn boek inspireer ik ouders om ontspannen en vol vertrouwen in het leven te staan.</p>
+              
+              <ul class="bullet-list" style="margin-top: 1rem;">
+                <li><strong>Rolmodel:</strong> Kinderen kopiëren jouw levenshouding — vaak letterlijk.</li>
+                <li><strong>Visualisaties:</strong> Effectieve en fijne oefeningen om kinderen in hun kracht te zetten.</li>
+                <li><strong>Praktisch:</strong> Direct toepasbare tips en oefeningen gebaseerd op jarenlange praktijkervaring.</li>
+              </ul>
+            </div>
+
+            <div class="boek__prijs reveal">
+              <span class="boek__prijs-num">€&nbsp;23,50</span>
+              <span class="boek__prijs-label">Inclusief verzending</span>
+            </div>
+
+            <div class="btn-group reveal">
+              <a href="mailto:hallo@mariekeverhaak.com" class="btn btn--primary btn--pill" id="boek-koop-btn">
+                Bestel het boek
+                <span class="btn__icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Boek Reviews -->
+        <div class="reviews-extended reveal" style="margin-top: 5rem; border-top: 1px solid var(--color-border); padding-top: 3rem;">
+          <h3 style="text-align: center; margin-bottom: 2.5rem;">Wat professionals zeggen over het boek</h3>
+          <div class="reviews__grid">
+            <div class="review-card">
+              <div class="review-card__inner">
+                <p class="review-card__tekst">"Echt present zijn naar jezelf en naar de ander: dat is wat Marieke ons leert. Een succesformule voor meer verbinding."</p>
+                <div class="review-card__persoon">
+                  <div>
+                    <p class="review-card__naam">Marja van Vliet, PhD</p>
+                    <p class="review-card__context">Onderzoeker Positieve Gezondheid</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-card__inner">
+                <p class="review-card__tekst">"Een aanrader voor ieder die wil groeien in voluit genieten door de expert te worden van jezelf."</p>
+                <div class="review-card__persoon">
+                  <div>
+                    <p class="review-card__naam">Vera de Pundert</p>
+                    <p class="review-card__context">Pedagoog</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-card__inner">
+                <p class="review-card__tekst">"Duidelijk, herkenbaar en soms confronterend. Ik haal er veel inspiratie uit voor mezelf en mijn werk."</p>
+                <div class="review-card__persoon">
+                  <div>
+                    <p class="review-card__naam">Rina Duijnker</p>
+                    <p class="review-card__context">Auteur & Kindercoach</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         REVIEWS
+    ============================================================ -->
+    <!-- ============================================================
+         PERSOONLIJKE SESSIE (GEDETAILLEERD)
+    ============================================================ -->
+    <section id="sessies-detail" class="section section--alt" aria-labelledby="sessie-heading">
+      <div class="container">
+        <div class="over__grid">
+          
+          <!-- Tekst links -->
+          <div class="over__content">
+            <span class="eyebrow reveal">Individuele begeleiding</span>
+            <h2 class="reveal" id="sessie-heading">Persoonlijke sessie met mij</h2>
+            
+            <div class="over__intro reveal">
+              <p>Ben jij een (hoog)gevoelige volwassene die bewust in het leven staat en eraan toe is om een volgende stap te zetten om ontspannen jezelf te zijn?</p>
+            </div>
+
+            <div class="over__body reveal">
+              <h3>Zelfheling</h3>
+              <p>Tijdens een persoonlijke sessie stem ik me volledig af op datgene wat er in jou speelt en wat jij nodig hebt. We spreken jouw zelfhelende vermogen aan om weer te leren voelen en voldoening te ervaren.</p>
+              
+              <div class="contact-highlight" style="margin-top: 2rem; padding: 1.5rem; border-left: 3px solid var(--color-accent); background: #fff;">
+                <p style="font-style: italic; color: var(--color-text);">"Voorafgaand aan een 1-op-1 sessie mag je altijd even bellen om te onderzoeken of de therapie bij je past."</p>
+                <p style="margin-top: 0.5rem; font-weight: 600;">Tel: 06-20525160</p>
+              </div>
+            </div>
+
+            <div class="reveal" style="margin-top: 2rem;">
+              <p class="dienst-card__prijs">€&nbsp;90 <span style="font-size: 0.9rem; font-family: var(--font-sans); color: var(--color-text-muted);">per 50 minuten · online</span></p>
+              <a href="#contact" class="btn btn--accent btn--pill" style="margin-top: 1.5rem;">Boek direct een sessie</a>
+            </div>
+          </div>
+
+          <!-- Reviews links -->
+          <div class="over__content reveal" style="background: rgba(255,255,255,0.5); padding: 2.5rem; border-radius: var(--radius-card);">
+            <h3 style="margin-bottom: 2rem;">Wat cliënten ervaren</h3>
+            
+            <div class="testimonial-mini" style="margin-bottom: 2.5rem;">
+              <p style="font-style: italic; margin-bottom: 1rem;">"Ik voelde me direct op mijn gemak. Tijdens de therapie heb ik ferme stappen vooruit gezet door vol zelfvertrouwen mijn grenzen aan te geven. En het fijne is: mijn kinderen doen me nu na."</p>
+              <p><strong>— Feline</strong></p>
+            </div>
+
+            <div class="testimonial-mini">
+              <p style="font-style: italic; margin-bottom: 1rem;">"Al tijdens het eerste gesprek voelde ik me veilig en begrepen. Haar eerlijkheid en oordeelloosheid gaven de doorslag om mijn gevoelens te durven onderzoeken."</p>
+              <p><strong>— Rob</strong></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         GROEPSMEDITATIE & SOUNDHEALING (PDF p.7-8)
+    ============================================================ -->
+    <section id="meditatie-detail" class="section" aria-labelledby="meditatie-heading">
+      <div class="container">
+        <div class="split">
+          <div class="hero__image-shell reveal">
+            <div class="hero__image-inner">
+              <img src="https://picsum.photos/seed/soundhealing/640/480" alt="Klankschalen en instrumenten voor soundhealing" loading="lazy" />
+            </div>
+          </div>
+          <div class="reveal">
+            <span class="eyebrow">Groep · Online</span>
+            <h2 id="meditatie-heading">Groepsmeditaties met soundhealing</h2>
+            <p class="over__intro">Tijdens mijn begeleide groepsmeditaties maken we een diepe reis naar binnen. Daar ervaar je innerlijke rust, harmonie en krijg je vaak inzichten of ingevingen.</p>
+            <ul class="bullet-list" style="margin-block: 1.5rem;">
+              <li>Ontdek wat jij graag wilt en wat jouw dromen zijn.</li>
+              <li>Leer actieve keuzes maken die jouw leven verrijken.</li>
+              <li>Ervaar de krachtige combinatie van meditatie en geluid.</li>
+            </ul>
+            <p class="dienst-card__prijs">€&nbsp;22 <span style="font-size: 0.9rem; font-family: var(--font-sans); color: var(--color-text-muted);">per 1,5 uur · online</span></p>
+          </div>
+        </div>
+
+        <div class="science-grid reveal">
+          <div class="science-card">
+            <h4>Soundhealing & Wetenschap</h4>
+            <p style="font-size: 0.85rem;">Uit onderzoek blijkt dat geluidstherapie stress vermindert, cognitieve functies verbetert en zorgt voor een rustigere gemoedstoestand en hogere creativiteit.</p>
+          </div>
+          <div class="science-card">
+            <h4>Wat deelnemers zeggen</h4>
+            <p style="font-style: italic; font-size: 0.85rem;">"Jouw stem is heel fijn en rustgevend waardoor ik snel en diep kon ontspannen." — Iris</p>
+          </div>
+          <div class="science-card">
+            <h4>Resultaten</h4>
+            <p style="font-size: 0.85rem;">"Ik voelde rust en harmonie. Het was een diep ontspannende ervaring." — Mark</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ONE DAY RETREAT (PDF p.9-10)
+    ============================================================ -->
+    <section id="retreat-detail" class="section section--alt" aria-labelledby="retreat-heading">
+      <div class="container">
+        <div class="reviews__header reveal">
+          <span class="eyebrow">Exclusieve Dagbeleving</span>
+          <h2 id="retreat-heading">One day- retreat: ‘Ontspannen jezelf zijn’</h2>
+          <p>Een heerlijke dag vol diepe ontspanning en innerlijke rust helemaal voor JOU.</p>
+        </div>
+
+        <div class="split">
+          <div class="reveal">
+            <h3>Het Programma</h3>
+            <div class="schedule">
+              <div class="schedule-item">
+                <div class="schedule-time">10:30 – 11:30</div>
+                <div class="schedule-desc"><strong>Aankomst & Kennismaken</strong>Op een ontspannen manier kennismaken onder het genot van koffie of thee.</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">11:30 – 13:45</div>
+                <div class="schedule-desc"><strong>Verbindingsmeditatie & Lunch</strong>Meditatie met intentie, anker en soundhealing, gevolgd door een vegetarische lunch.</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">13:45 – 15:30</div>
+                <div class="schedule-desc"><strong>Pranayama, Hummen & Integratie</strong>Ademwerk voor balans en focus, ruimte voor vragen en afronding.</div>
+              </div>
+            </div>
+            <div style="margin-top: 2rem;">
+              <p class="dienst-card__prijs">€&nbsp;144 <span style="font-size: 0.9rem; font-family: var(--font-sans); color: var(--color-text-muted);">volledig verzorgd · Midden-Nederland</span></p>
+              <a href="#contact" class="btn btn--accent btn--pill" style="margin-top: 1.5rem;">Ik wil naar dit retreat</a>
+            </div>
+          </div>
+          <div class="reveal">
+            <div class="science-card" style="background: var(--color-canvas);">
+              <h3>De kracht van meditatie</h3>
+              <p style="margin-top: 1rem; font-size: 0.9rem;">Onderzoek door topneuroloog Steven Laureys toont aan dat meditatie een positieve invloed heeft op:</p>
+              <ul class="bullet-list" style="margin-top: 1rem;">
+                <li>Stress-gerelateerde aandoeningen & Angst</li>
+                <li>Concentratieproblemen & Slapeloosheid</li>
+                <li>Burn-out & Chronische pijn</li>
+                <li>Creativiteit, optimisme en motivatie</li>
+              </ul>
+              <div class="testimonial-mini" style="margin-top: 2rem; border-top: 1px solid var(--color-border); padding-top: 1.5rem;">
+                <p style="font-style: italic; font-size: 0.9rem;">"Ik voelde me na deze dag opgelucht en ervaarde ruimte in mezelf." — Nadja</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+    <!-- ============================================================
+         CONTACT
+    ============================================================ -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <span class="eyebrow reveal">Contact</span>
+        <h2 class="reveal" id="contact-heading">Laten we samen aan de slag gaan</h2>
+        <p class="reveal">
+          Heb je een vraag over een persoonlijke sessie, het boek of wil je meer weten over de retreats? Ik reageer binnen 2 werkdagen.
+        </p>
+        <div class="contact__actions reveal">
+          <a href="mailto:hallo@mariekeverhaak.com" class="btn btn--accent btn--pill" id="contact-mail-btn">
+            Stuur een bericht
+            <span class="btn__icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H5M10 2v5"/></svg>
+            </span>
+          </a>
+          <a href="tel:0620525160" class="btn btn--outline btn--pill">
+            Bel direct: 06-20525160
+          </a>
+        </div>
+      </div>
+    </section>
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__logo">Marieke Verhaak</span>
+        <p class="footer__copy">&copy; 2026 Marieke Verhaak. Alle rechten voorbehouden.</p>
+        <nav class="footer__links" aria-label="Footer navigatie">
+          <a href="#over">Over</a>
+          <a href="#diensten">Diensten</a>
+          <a href="#boek">Boek</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
