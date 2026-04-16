@@ -56,6 +56,35 @@
 /* ============================================================
    2. RESET & BASE
    ============================================================ */
+
+/* Skip link (toegankelijkheid) */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-text);
+  color: #fff;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: top var(--duration-fast) var(--ease-premium);
+}
+.skip-link:focus {
+  top: 1rem;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Focusindicatoren voor toetsenbordnavigatie */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -392,7 +421,18 @@ blockquote {
 .nav__overlay.is-open a:nth-child(4) { transition-delay: 210ms; }
 .nav__overlay.is-open a:nth-child(5) { transition-delay: 260ms; }
 .nav__overlay.is-open a:nth-child(6) { transition-delay: 310ms; }
+.nav__overlay.is-open a:nth-child(7) { transition-delay: 360ms; }
+.nav__overlay.is-open a:nth-child(8) { transition-delay: 400ms; }
 .nav__overlay a:hover { color: var(--color-accent); }
+
+.nav__overlay .nav-link-overlay--cta {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: var(--color-accent-dark);
+}
+.nav__overlay .nav-link-overlay--cta:hover {
+  color: var(--color-accent);
+}
 
 /* ============================================================
    7. HERO SECTION
@@ -1225,6 +1265,168 @@ footer {
 .science-card h4 {
   margin-bottom: 0.5rem;
   color: var(--color-accent-dark);
+}
+
+/* ============================================================
+   17. AGENDA KALENDER
+   ============================================================ */
+#agenda {
+  background: var(--color-surface);
+}
+
+.agenda-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin-block: 2rem 3rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-btn);
+  border: 1px solid var(--color-border);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+}
+
+/* Gekleurde event-stippen */
+.cal-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.cal-dot--sessie    { background: var(--color-accent); }
+.cal-dot--meditatie { background: #7B68C8; }
+.cal-dot--retreat   { background: #C87B3A; }
+.cal-dot--vol       { background: var(--color-text-muted); }
+
+/* Kalender grid: 3 maanden naast elkaar */
+#agenda-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* Maand-kaart (double-bezel) */
+.cal-month {
+  background: rgba(0,0,0,0.02);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 8px;
+  transition: box-shadow var(--duration-mid) var(--ease-premium);
+}
+
+.cal-month__title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1rem 1.25rem 0.75rem;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+/* Binnenste kalender-grid */
+.cal-grid {
+  background: var(--color-surface);
+  border-radius: var(--radius-inner);
+  padding: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.9);
+}
+
+.cal-day-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 0.4rem 0;
+  font-family: var(--font-sans);
+}
+
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  gap: 2px;
+  cursor: default;
+  transition: background var(--duration-fast) var(--ease-premium);
+}
+
+.cal-day__num {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1;
+  font-family: var(--font-sans);
+}
+
+/* Vandaag */
+.cal-day--today {
+  background: var(--color-accent-light);
+}
+.cal-day--today .cal-day__num {
+  color: var(--color-accent-dark);
+  font-weight: 700;
+}
+
+/* Dag met evenement */
+.cal-day--has-event {
+  cursor: pointer;
+}
+.cal-day--has-event .cal-day__num {
+  color: var(--color-text);
+  font-weight: 600;
+}
+.cal-day--has-event:hover {
+  background: var(--color-surface-alt);
+}
+
+.cal-day__dots {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+}
+
+/* Event tooltip (klein popup bij hover) */
+.cal-tooltip {
+  position: fixed;
+  z-index: 300;
+  background: var(--color-text);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-btn);
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(44,40,37,0.18);
+  transform: translateY(-6px);
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-premium),
+              transform var(--duration-fast) var(--ease-premium);
+}
+.cal-tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  #agenda-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 600px) {

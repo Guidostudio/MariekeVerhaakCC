@@ -15,6 +15,8 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Ga naar hoofdinhoud</a>
+
   <!-- ============================================================
        NAVIGATIE
   ============================================================ -->
@@ -28,6 +30,7 @@
         <li><a href="#sessies-detail">Sessies</a></li>
         <li><a href="#meditatie-detail">Meditatie</a></li>
         <li><a href="#retreat-detail">Retreat</a></li>
+        <li><a href="#agenda">Agenda</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
@@ -54,11 +57,12 @@
     <a href="#sessies-detail" class="nav-link-overlay">Sessies</a>
     <a href="#meditatie-detail" class="nav-link-overlay">Meditatie</a>
     <a href="#retreat-detail" class="nav-link-overlay">Retreat</a>
+    <a href="#agenda" class="nav-link-overlay">Agenda</a>
     <a href="#contact" class="nav-link-overlay">Contact</a>
-    <a href="#sessies-detail" class="nav-link-overlay" style="font-size:1.2rem; margin-top:1rem; color:var(--color-accent-dark);">Plan een sessie →</a>
+    <a href="#sessies-detail" class="nav-link-overlay nav-link-overlay--cta">Plan een sessie →</a>
   </div>
 
-  <main>
+  <main id="main-content">
 
     <!-- ============================================================
          HERO
@@ -99,7 +103,7 @@
           <div class="hero__image-shell reveal" style="transition-delay: 120ms; position: relative;">
             <div class="hero__image-inner">
               <img
-                src="https://picsum.photos/seed/marieke-portrait/640/800"
+                src="marieke.jpg"
                 alt="Portret van Marieke Verhaak, hypnotherapeut en auteur"
                 loading="eager"
                 fetchpriority="high"
@@ -127,8 +131,8 @@
           <div class="over__image-shell reveal">
             <div class="over__image-inner">
               <img
-                src="marieke.jpg"
-                alt="Marieke Verhaak"
+                src="Foto%20met%20boek%20'22.jpg"
+                alt="Marieke Verhaak met haar boek Gelukkig opgroeien"
                 loading="lazy"
               />
             </div>
@@ -316,7 +320,7 @@
           <div class="boek__cover-shell reveal">
             <div class="boek__cover-inner">
               <img
-                src="https://picsum.photos/seed/gelukkig-opgroeien-boek/640/853"
+                src="Afbeelding%20cover.jpg"
                 alt="Boekcover van Gelukkig opgroeien door Marieke Verhaak"
                 loading="lazy"
               />
@@ -462,7 +466,7 @@
         <div class="split">
           <div class="hero__image-shell reveal">
             <div class="hero__image-inner">
-              <img src="https://picsum.photos/seed/soundhealing/640/480" alt="Klankschalen en instrumenten voor soundhealing" loading="lazy" />
+              <img src="frames-for-your-heart-unsplash%20soundhealing.jpg" alt="Klankschalen en instrumenten voor soundhealing" loading="lazy" />
             </div>
           </div>
           <div class="reveal">
@@ -547,7 +551,26 @@
       </div>
     </section>
 
-  </main>
+    <!-- ============================================================
+         AGENDA
+    ============================================================ -->
+    <section id="agenda" class="section" aria-labelledby="agenda-heading">
+      <div class="container">
+        <span class="eyebrow reveal">Agenda</span>
+        <h2 class="reveal" id="agenda-heading">Beschikbaarheid &amp; evenementen</h2>
+        <p class="reveal">Plan vooruit: bekijk wanneer groepsmeditaties, retreats en persoonlijke sessies beschikbaar zijn. Klik op een gekleurde dag voor meer info.</p>
+
+        <div class="agenda-legend reveal">
+          <div class="legend-item"><span class="cal-dot cal-dot--sessie"></span>Sessies beschikbaar</div>
+          <div class="legend-item"><span class="cal-dot cal-dot--meditatie"></span>Groepsmeditatie &amp; soundhealing</div>
+          <div class="legend-item"><span class="cal-dot cal-dot--retreat"></span>One day retreat</div>
+          <div class="legend-item"><span class="cal-dot cal-dot--vol"></span>Volzet</div>
+        </div>
+
+        <div id="agenda-grid" class="reveal"></div>
+      </div>
+    </section>
+
 
     <!-- ============================================================
          CONTACT
@@ -572,6 +595,9 @@
         </div>
       </div>
     </section>
+
+  </main>
+
   <!-- ============================================================
        FOOTER
   ============================================================ -->

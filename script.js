@@ -32,6 +32,7 @@ window.addEventListener('scroll', onScroll, { passive: true });
 function openMenu() {
   hamburger.classList.add('is-open');
   hamburger.setAttribute('aria-expanded', 'true');
+  hamburger.setAttribute('aria-label', 'Menu sluiten');
   navOverlay.classList.add('is-open');
   navOverlay.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
@@ -40,6 +41,7 @@ function openMenu() {
 function closeMenu() {
   hamburger.classList.remove('is-open');
   hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.setAttribute('aria-label', 'Menu openen');
   navOverlay.classList.remove('is-open');
   navOverlay.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
@@ -173,3 +175,157 @@ const sectionObserver = new IntersectionObserver((entries) => {
 });
 
 sections.forEach(s => sectionObserver.observe(s));
+
+
+// ============================================================
+// 7. AGENDA KALENDER
+//    Pas de evenementen hieronder aan — format: 'YYYY-MM-DD'
+// ============================================================
+
+const agendaEvents = {
+  // --- APRIL 2026 ---
+  '2026-04-28': [{ type: 'meditatie', label: 'Groepsmeditatie & soundhealing' }],
+
+  // --- MEI 2026 ---
+  '2026-05-06': [{ type: 'sessie',    label: 'Sessies beschikbaar' }],
+  '2026-05-13': [{ type: 'sessie',    label: 'Sessies beschikbaar' }],
+  '2026-05-20': [{ type: 'meditatie', label: 'Groepsmeditatie & soundhealing' }],
+  '2026-05-23': [{ type: 'retreat',   label: 'One day retreat — Ontspannen jezelf zijn' }],
+  '2026-05-27': [{ type: 'sessie',    label: 'Sessies beschikbaar' }],
+
+  // --- JUNI 2026 ---
+  '2026-06-03': [{ type: 'sessie',    label: 'Sessies beschikbaar' }],
+  '2026-06-10': [{ type: 'sessie',    label: 'Sessies beschikbaar' }],
+  '2026-06-17': [{ type: 'meditatie', label: 'Groepsmeditatie & soundhealing' }],
+  '2026-06-24': [{ type: 'sessie',    label: 'Sessies beschikbaar' }],
+  '2026-06-28': [{ type: 'retreat',   label: 'One day retreat — Ontspannen jezelf zijn' }],
+};
+
+// Sectielinks per evenement-type
+const eventLinks = {
+  sessie:    '#sessies-detail',
+  meditatie: '#meditatie-detail',
+  retreat:   '#retreat-detail',
+  vol:       '#contact',
+};
+
+function buildCalendar() {
+  const grid = document.getElementById('agenda-grid');
+  if (!grid) return;
+
+  const today = new Date();
+  const monthNames = [
+    'januari','februari','maart','april','mei','juni',
+    'juli','augustus','september','oktober','november','december'
+  ];
+  const dayLabels = ['ma','di','wo','do','vr','za','zo'];
+
+  // Tooltip element (gedeeld)
+  const tooltip = document.createElement('div');
+  tooltip.className = 'cal-tooltip';
+  document.body.appendChild(tooltip);
+
+  for (let m = 0; m < 3; m++) {
+    const d = new Date(today.getFullYear(), today.getMonth() + m, 1);
+    const year  = d.getFullYear();
+    const month = d.getMonth();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    // Maandag = 0, zondag = 6
+    let firstDay = d.getDay() - 1;
+    if (firstDay < 0) firstDay = 6;
+
+    const calEl = document.createElement('div');
+    calEl.className = 'cal-month reveal';
+
+    const title = document.createElement('div');
+    title.className = 'cal-month__title';
+    title.textContent = `${monthNames[month]} ${year}`;
+    calEl.appendChild(title);
+
+    const table = document.createElement('div');
+    table.className = 'cal-grid';
+
+    // Koptekst met dagen
+    dayLabels.forEach(day => {
+      const header = document.createElement('div');
+      header.className = 'cal-day-label';
+      header.textContent = day;
+      table.appendChild(header);
+    });
+
+    // Lege cellen voor de eerste dag
+    for (let i = 0; i < firstDay; i++) {
+      const empty = document.createElement('div');
+      empty.className = 'cal-day cal-day--empty';
+      table.appendChild(empty);
+    }
+
+    // Dag-cellen
+    for (let day = 1; day <= daysInMonth; day++) {
+      const mm  = String(month + 1).padStart(2, '0');
+      const dd  = String(day).padStart(2, '0');
+      const key = `${year}-${mm}-${dd}`;
+
+      const isToday = (
+        day   === today.getDate()  &&
+        month === today.getMonth() &&
+        year  === today.getFullYear()
+      );
+
+      const cell = document.createElement('div');
+      cell.className = 'cal-day' + (isToday ? ' cal-day--today' : '');
+
+      const num = document.createElement('span');
+      num.className = 'cal-day__num';
+      num.textContent = day;
+      cell.appendChild(num);
+
+      const eventsForDay = agendaEvents[key];
+      if (eventsForDay) {
+        cell.classList.add('cal-day--has-event');
+
+        const dots = document.createElement('div');
+        dots.className = 'cal-day__dots';
+        eventsForDay.forEach(ev => {
+          const dot = document.createElement('span');
+          dot.className = `cal-dot cal-dot--${ev.type}`;
+          dots.appendChild(dot);
+        });
+        cell.appendChild(dots);
+
+        // Klik: ga naar de juiste sectie
+        cell.addEventListener('click', () => {
+          const href = eventLinks[eventsForDay[0].type] || '#contact';
+          const target = document.querySelector(href);
+          if (!target) return;
+          const top = target.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top, behavior: 'smooth' });
+        });
+
+        // Hover tooltip
+        cell.addEventListener('mouseenter', (e) => {
+          tooltip.textContent = eventsForDay.map(ev => ev.label).join(' & ');
+          tooltip.classList.add('is-visible');
+        });
+        cell.addEventListener('mousemove', (e) => {
+          tooltip.style.left = (e.clientX + 12) + 'px';
+          tooltip.style.top  = (e.clientY - 36) + 'px';
+        });
+        cell.addEventListener('mouseleave', () => {
+          tooltip.classList.remove('is-visible');
+        });
+      }
+
+      table.appendChild(cell);
+    }
+
+    calEl.appendChild(table);
+    grid.appendChild(calEl);
+
+    // Animeer de maand-kaarten mee met de reveal-observer
+    revealObserver.observe(calEl);
+  }
+}
+
+buildCalendar();
