@@ -59,7 +59,10 @@ overlayLinks.forEach(link => {
 
 // Close on Escape
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeMenu();
+  if (e.key === 'Escape') {
+    closeMenu();
+    document.querySelectorAll('.modal-overlay.is-open').forEach(closeModal);
+  }
 });
 
 
@@ -329,3 +332,33 @@ function buildCalendar() {
 }
 
 buildCalendar();
+
+
+// ============================================================
+// 8. MODALS
+// ============================================================
+
+function closeModal(modal) {
+  modal.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('[data-modal]').forEach(trigger => {
+  trigger.addEventListener('click', e => {
+    e.preventDefault();
+    const modal = document.getElementById(trigger.dataset.modal);
+    if (!modal) return;
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) closeModal(overlay);
+  });
+});
+
+document.querySelectorAll('.modal-close').forEach(btn => {
+  btn.addEventListener('click', () => closeModal(btn.closest('.modal-overlay')));
+});

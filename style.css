@@ -24,6 +24,11 @@
   --color-accent-light: #EFF4F0;
   --color-accent-dark:  #4D6B53;
 
+  /* Accent: Zacht roze */
+  --color-pink:         #C4788A;
+  --color-pink-light:   #F7EDF0;
+  --color-pink-dark:    #9E5A6B;
+
   /* Typography */
   --font-serif:   'Playfair Display', Georgia, serif;
   --font-sans:    'Plus Jakarta Sans', 'Helvetica Neue', sans-serif;
@@ -196,6 +201,10 @@ blockquote {
   background: var(--color-surface-alt);
 }
 
+.section--pink {
+  background: var(--color-pink-light);
+}
+
 .split {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -253,6 +262,14 @@ blockquote {
 }
 .btn--accent:hover {
   background: var(--color-accent-dark);
+}
+
+.btn--pink {
+  background: var(--color-pink);
+  color: #FFFFFF;
+}
+.btn--pink:hover {
+  background: var(--color-pink-dark);
 }
 
 .btn--pill {
@@ -682,6 +699,10 @@ body::after {
 .dienst-card--accent .dienst-card__prijs { color: rgba(255,255,255,0.9); }
 
 .dienst-card--accent .dienst-card__title { color: #fff; }
+
+.dienst-card--accent .dienst-card__sub {
+  color: rgba(255, 255, 255, 0.8);
+}
 
 .dienst-card__icon {
   width: 48px;
@@ -1433,5 +1454,120 @@ footer {
   .schedule-item {
     grid-template-columns: 1fr;
     gap: 0.5rem;
+  }
+}
+
+/* ============================================================
+   18. INLINE TEKSTLINKS
+   ============================================================ */
+.text-link {
+  color: var(--color-accent-dark);
+  text-decoration: underline;
+  text-decoration-color: rgba(107, 140, 114, 0.4);
+  text-underline-offset: 3px;
+  transition: color var(--duration-fast) var(--ease-premium),
+              text-decoration-color var(--duration-fast) var(--ease-premium);
+}
+.text-link:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+/* ============================================================
+   19. MODALS
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(44, 40, 37, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-mid) var(--ease-premium);
+  overflow-y: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5rem 1.5rem 3rem;
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-content {
+  background: var(--color-canvas);
+  border-radius: var(--radius-card);
+  max-width: 720px;
+  width: 100%;
+  padding: 3rem 3rem 3.5rem;
+  position: relative;
+  transform: translateY(24px);
+  transition: transform var(--duration-mid) var(--ease-premium);
+  box-shadow: 0 32px 80px rgba(44, 40, 37, 0.18);
+}
+
+.modal-overlay.is-open .modal-content {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: background var(--duration-fast) var(--ease-premium),
+              color var(--duration-fast) var(--ease-premium);
+  font-family: var(--font-sans);
+}
+
+.modal-close:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+}
+
+.modal-content h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 1.5rem;
+}
+
+.modal-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.modal-content p {
+  margin-bottom: 1rem;
+  max-width: none;
+}
+
+.modal-content .eyebrow {
+  margin-bottom: 1rem;
+}
+
+.modal-content .bullet-list {
+  margin-block: 0.75rem 1rem;
+}
+
+@media (max-width: 600px) {
+  .modal-overlay {
+    padding: 3rem 1rem 2rem;
+  }
+  .modal-content {
+    padding: 2rem 1.5rem 2.5rem;
   }
 }
