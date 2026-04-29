@@ -1563,6 +1563,14 @@ footer {
   margin-block: 0.75rem 1rem;
 }
 
+.modal-photo {
+  width: 100%;
+  display: block;
+  border-radius: calc(var(--radius-card) * 0.6);
+  margin: 1.5rem 0;
+  object-fit: cover;
+}
+
 @media (max-width: 600px) {
   .modal-overlay {
     padding: 3rem 1rem 2rem;
