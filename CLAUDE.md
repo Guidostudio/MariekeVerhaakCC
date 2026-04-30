@@ -60,9 +60,8 @@ Kernpunten:
 
 ### 2. Tekstwijzigingen per sectie
 
-**Hero — "Kom weer in Balans"**
-Vervang: *"Heb jij behoefte om te onthaasten? Ontdek de ruimte en veiligheid..."*
-Door: *"Ik begeleid volwassenen die vastlopen in de hectiek van alledag terug te keren naar hun kern. Met mijn helende stem, zuivere energie en oordeelloze aanwezigheid breng ik je naar de laag waar je heelt, voelt en weer kiest wat écht klopt. Al 500+ tevreden mensen gingen je voor."*
+**Hero — "Kom weer in balans"**
+Huidige tekst: *"Ik begeleid drukbezette volwassenen die zichzelf voorbij lopen in de dagelijkse hectiek te (her)ontdekken wat ze diep van binnen écht willen, zodat ze vanuit innerlijke rust en vrijheid keuzes maken die hun leven weer plezierig en vervullend maken."*
 
 **Over mij**
 Verwijder bestaande tekst. Nieuwe versie begint met het citaat en loopt door t/m verwijzing naar "Portugalreis 2026" (link) en boek *Gelukkig opgroeien*. Volledige tekst in feedbackdocument.
