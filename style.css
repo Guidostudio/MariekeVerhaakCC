@@ -1082,7 +1082,7 @@ body::after {
 }
 
 footer {
-  background: #1E1A17;
+  background: var(--color-pink-dark);
   padding-block: 2rem;
 }
 
