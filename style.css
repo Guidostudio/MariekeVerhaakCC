@@ -1041,7 +1041,7 @@ body::after {
    13. CONTACT / FOOTER
    ============================================================ */
 #contact {
-  background: var(--color-text);
+  background: var(--color-pink-dark);
   color: #FFFFFF;
   text-align: center;
 }
